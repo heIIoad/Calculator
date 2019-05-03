@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -25,7 +25,6 @@ class Ui_CalculatorClass
 {
 public:
     QWidget *centralWidget;
-    QLCDNumber *Display;
     QPushButton *button7;
     QPushButton *button8;
     QPushButton *button9;
@@ -46,6 +45,7 @@ public:
     QPushButton *button0;
     QPushButton *buttonEqual;
     QPushButton *buttonComma;
+    QLineEdit *Display;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -54,17 +54,9 @@ public:
     {
         if (CalculatorClass->objectName().isEmpty())
             CalculatorClass->setObjectName(QString::fromUtf8("CalculatorClass"));
-        CalculatorClass->resize(505, 568);
+        CalculatorClass->resize(303, 338);
         centralWidget = new QWidget(CalculatorClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        Display = new QLCDNumber(centralWidget);
-        Display->setObjectName(QString::fromUtf8("Display"));
-        Display->setEnabled(true);
-        Display->setGeometry(QRect(0, 0, 299, 81));
-        Display->setSmallDecimalPoint(true);
-        Display->setDigitCount(15);
-        Display->setSegmentStyle(QLCDNumber::Flat);
-        Display->setProperty("intValue", QVariant(0));
         button7 = new QPushButton(centralWidget);
         button7->setObjectName(QString::fromUtf8("button7"));
         button7->setGeometry(QRect(0, 80, 60, 50));
@@ -128,12 +120,66 @@ public:
         buttonMp = new QPushButton(centralWidget);
         buttonMp->setObjectName(QString::fromUtf8("buttonMp"));
         buttonMp->setGeometry(QRect(180, 80, 60, 50));
+        buttonMp->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gainsboro;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gray;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: DarkGrey;\n"
+"}\n"
+"\n"
+""));
         MR = new QPushButton(centralWidget);
         MR->setObjectName(QString::fromUtf8("MR"));
         MR->setGeometry(QRect(240, 80, 60, 50));
+        MR->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gainsboro;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gray;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: DarkGrey;\n"
+"}\n"
+"\n"
+""));
         buttonDiv = new QPushButton(centralWidget);
         buttonDiv->setObjectName(QString::fromUtf8("buttonDiv"));
         buttonDiv->setGeometry(QRect(180, 130, 60, 50));
+        buttonDiv->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gainsboro;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gray;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: DarkGrey;\n"
+"}\n"
+"\n"
+""));
         button6 = new QPushButton(centralWidget);
         button6->setObjectName(QString::fromUtf8("button6"));
         button6->setGeometry(QRect(0, 130, 60, 50));
@@ -177,6 +223,24 @@ public:
         buttonMC = new QPushButton(centralWidget);
         buttonMC->setObjectName(QString::fromUtf8("buttonMC"));
         buttonMC->setGeometry(QRect(240, 130, 60, 50));
+        buttonMC->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gainsboro;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gray;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: DarkGrey;\n"
+"}\n"
+"\n"
+""));
         button4 = new QPushButton(centralWidget);
         button4->setObjectName(QString::fromUtf8("button4"));
         button4->setGeometry(QRect(120, 130, 60, 50));
@@ -200,6 +264,24 @@ public:
         buttonSub = new QPushButton(centralWidget);
         buttonSub->setObjectName(QString::fromUtf8("buttonSub"));
         buttonSub->setGeometry(QRect(180, 180, 60, 50));
+        buttonSub->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gainsboro;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gray;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: DarkGrey;\n"
+"}\n"
+"\n"
+""));
         button3 = new QPushButton(centralWidget);
         button3->setObjectName(QString::fromUtf8("button3"));
         button3->setGeometry(QRect(0, 180, 60, 50));
@@ -243,6 +325,24 @@ public:
         buttonMulti = new QPushButton(centralWidget);
         buttonMulti->setObjectName(QString::fromUtf8("buttonMulti"));
         buttonMulti->setGeometry(QRect(240, 180, 60, 50));
+        buttonMulti->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gainsboro;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gray;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: DarkGrey;\n"
+"}\n"
+"\n"
+""));
         button1 = new QPushButton(centralWidget);
         button1->setObjectName(QString::fromUtf8("button1"));
         button1->setGeometry(QRect(120, 180, 60, 50));
@@ -266,9 +366,44 @@ public:
         buttonSum = new QPushButton(centralWidget);
         buttonSum->setObjectName(QString::fromUtf8("buttonSum"));
         buttonSum->setGeometry(QRect(180, 230, 60, 50));
+        buttonSum->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gainsboro;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Gray;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: DarkGrey;\n"
+"}\n"
+"\n"
+""));
         buttonSign = new QPushButton(centralWidget);
         buttonSign->setObjectName(QString::fromUtf8("buttonSign"));
         buttonSign->setGeometry(QRect(0, 230, 60, 50));
+        buttonSign->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: LightCyan;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Aquamarine;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: PaleTurquoise;\n"
+"}\n"
+"\n"
+""));
         button0 = new QPushButton(centralWidget);
         button0->setObjectName(QString::fromUtf8("button0"));
         button0->setGeometry(QRect(60, 230, 60, 50));
@@ -314,10 +449,35 @@ public:
         buttonComma = new QPushButton(centralWidget);
         buttonComma->setObjectName(QString::fromUtf8("buttonComma"));
         buttonComma->setGeometry(QRect(120, 230, 60, 50));
+        buttonComma->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: 1px solid grey;\n"
+"	background-color: LightCyan;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:hover:pressed{\n"
+"	border: 1px solid grey;\n"
+"	background-color: Aquamarine;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border: 1px solid grey;\n"
+"	background-color: PaleTurquoise;\n"
+"}\n"
+"\n"
+""));
+        Display = new QLineEdit(centralWidget);
+        Display->setObjectName(QString::fromUtf8("Display"));
+        Display->setGeometry(QRect(0, 0, 300, 81));
+        QFont font;
+        font.setPointSize(24);
+        Display->setFont(font);
+        Display->setLayoutDirection(Qt::LeftToRight);
+        Display->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         CalculatorClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(CalculatorClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 505, 21));
+        menuBar->setGeometry(QRect(0, 0, 303, 21));
         CalculatorClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(CalculatorClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -350,10 +510,11 @@ public:
         buttonMulti->setText(QApplication::translate("CalculatorClass", "*", nullptr));
         button1->setText(QApplication::translate("CalculatorClass", "1", nullptr));
         buttonSum->setText(QApplication::translate("CalculatorClass", "+", nullptr));
-        buttonSign->setText(QApplication::translate("CalculatorClass", "+/-", nullptr));
+        buttonSign->setText(QApplication::translate("CalculatorClass", "AC", nullptr));
         button0->setText(QApplication::translate("CalculatorClass", "0", nullptr));
         buttonEqual->setText(QApplication::translate("CalculatorClass", "=", nullptr));
-        buttonComma->setText(QApplication::translate("CalculatorClass", ",", nullptr));
+        buttonComma->setText(QApplication::translate("CalculatorClass", "+/-", nullptr));
+        Display->setText(QApplication::translate("CalculatorClass", "0", nullptr));
     } // retranslateUi
 
 };

@@ -12,4 +12,11 @@ public:
 
 private:
 	Ui::CalculatorClass ui;
+	double valueStored=0;
+
+private slots:
+	void numberButton();
+	//void mathButton();
+	//void sumButton();
+	//void plusMinus();
 };

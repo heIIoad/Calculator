@@ -6,39 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>505</width>
-    <height>568</height>
+    <width>303</width>
+    <height>338</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Calculator</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLCDNumber" name="Display">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>299</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="smallDecimalPoint">
-     <bool>true</bool>
-    </property>
-    <property name="digitCount">
-     <number>15</number>
-    </property>
-    <property name="segmentStyle">
-     <enum>QLCDNumber::Flat</enum>
-    </property>
-    <property name="intValue" stdset="0">
-     <number>0</number>
-    </property>
-   </widget>
    <widget class="QPushButton" name="button7">
     <property name="geometry">
      <rect>
@@ -144,6 +119,26 @@ QPushButton:hover{
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: Gainsboro;
+}
+
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Gray;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: DarkGrey;
+}
+
+</string>
+    </property>
     <property name="text">
      <string>M+</string>
     </property>
@@ -157,6 +152,26 @@ QPushButton:hover{
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: Gainsboro;
+}
+
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Gray;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: DarkGrey;
+}
+
+</string>
+    </property>
     <property name="text">
      <string>MR</string>
     </property>
@@ -169,6 +184,26 @@ QPushButton:hover{
       <width>60</width>
       <height>50</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: Gainsboro;
+}
+
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Gray;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: DarkGrey;
+}
+
+</string>
     </property>
     <property name="text">
      <string>/</string>
@@ -247,6 +282,26 @@ QPushButton:hover{
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: Gainsboro;
+}
+
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Gray;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: DarkGrey;
+}
+
+</string>
+    </property>
     <property name="text">
      <string>MC</string>
     </property>
@@ -291,6 +346,26 @@ QPushButton:hover{
       <width>60</width>
       <height>50</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: Gainsboro;
+}
+
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Gray;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: DarkGrey;
+}
+
+</string>
     </property>
     <property name="text">
      <string>-</string>
@@ -369,6 +444,26 @@ QPushButton:hover{
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: Gainsboro;
+}
+
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Gray;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: DarkGrey;
+}
+
+</string>
+    </property>
     <property name="text">
      <string>*</string>
     </property>
@@ -414,6 +509,26 @@ QPushButton:hover{
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: Gainsboro;
+}
+
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Gray;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: DarkGrey;
+}
+
+</string>
+    </property>
     <property name="text">
      <string>+</string>
     </property>
@@ -447,7 +562,7 @@ QPushButton:hover{
 </string>
     </property>
     <property name="text">
-     <string>+/-</string>
+     <string>AC</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button0">
@@ -545,7 +660,31 @@ QPushButton:hover{
 </string>
     </property>
     <property name="text">
-     <string>,</string>
+     <string>+/-</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Display">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>300</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
   </widget>
@@ -554,7 +693,7 @@ QPushButton:hover{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>505</width>
+     <width>303</width>
      <height>21</height>
     </rect>
    </property>
