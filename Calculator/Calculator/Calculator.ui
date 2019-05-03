@@ -427,6 +427,25 @@ QPushButton:hover{
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: LightCyan;
+}
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Aquamarine;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: PaleTurquoise;
+}
+
+</string>
+    </property>
     <property name="text">
      <string>+/-</string>
     </property>
@@ -505,6 +524,25 @@ QPushButton:hover{
       <width>60</width>
       <height>50</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: 1px solid grey;
+	background-color: LightCyan;
+}
+
+
+QPushButton:hover:pressed{
+	border: 1px solid grey;
+	background-color: Aquamarine;
+}
+
+QPushButton:hover{
+	border: 1px solid grey;
+	background-color: PaleTurquoise;
+}
+
+</string>
     </property>
     <property name="text">
      <string>,</string>
