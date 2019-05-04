@@ -533,7 +533,7 @@ QPushButton:hover{
      <string>+</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="buttonSign">
+   <widget class="QPushButton" name="buttonClear">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -631,7 +631,7 @@ QPushButton:hover{
      <string>=</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="buttonComma">
+   <widget class="QPushButton" name="buttonSign">
     <property name="geometry">
      <rect>
       <x>120</x>

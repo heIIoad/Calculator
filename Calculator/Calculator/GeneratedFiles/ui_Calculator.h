@@ -41,10 +41,10 @@ public:
     QPushButton *buttonMulti;
     QPushButton *button1;
     QPushButton *buttonSum;
-    QPushButton *buttonSign;
+    QPushButton *buttonClear;
     QPushButton *button0;
     QPushButton *buttonEqual;
-    QPushButton *buttonComma;
+    QPushButton *buttonSign;
     QLineEdit *Display;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -384,10 +384,10 @@ public:
 "}\n"
 "\n"
 ""));
-        buttonSign = new QPushButton(centralWidget);
-        buttonSign->setObjectName(QString::fromUtf8("buttonSign"));
-        buttonSign->setGeometry(QRect(0, 230, 60, 50));
-        buttonSign->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        buttonClear = new QPushButton(centralWidget);
+        buttonClear->setObjectName(QString::fromUtf8("buttonClear"));
+        buttonClear->setGeometry(QRect(0, 230, 60, 50));
+        buttonClear->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border: 1px solid grey;\n"
 "	background-color: LightCyan;\n"
 "}\n"
@@ -446,10 +446,10 @@ public:
 "\n"
 "\n"
 ""));
-        buttonComma = new QPushButton(centralWidget);
-        buttonComma->setObjectName(QString::fromUtf8("buttonComma"));
-        buttonComma->setGeometry(QRect(120, 230, 60, 50));
-        buttonComma->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        buttonSign = new QPushButton(centralWidget);
+        buttonSign->setObjectName(QString::fromUtf8("buttonSign"));
+        buttonSign->setGeometry(QRect(120, 230, 60, 50));
+        buttonSign->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border: 1px solid grey;\n"
 "	background-color: LightCyan;\n"
 "}\n"
@@ -510,10 +510,10 @@ public:
         buttonMulti->setText(QApplication::translate("CalculatorClass", "*", nullptr));
         button1->setText(QApplication::translate("CalculatorClass", "1", nullptr));
         buttonSum->setText(QApplication::translate("CalculatorClass", "+", nullptr));
-        buttonSign->setText(QApplication::translate("CalculatorClass", "AC", nullptr));
+        buttonClear->setText(QApplication::translate("CalculatorClass", "AC", nullptr));
         button0->setText(QApplication::translate("CalculatorClass", "0", nullptr));
         buttonEqual->setText(QApplication::translate("CalculatorClass", "=", nullptr));
-        buttonComma->setText(QApplication::translate("CalculatorClass", "+/-", nullptr));
+        buttonSign->setText(QApplication::translate("CalculatorClass", "+/-", nullptr));
         Display->setText(QApplication::translate("CalculatorClass", "0", nullptr));
     } // retranslateUi
 
