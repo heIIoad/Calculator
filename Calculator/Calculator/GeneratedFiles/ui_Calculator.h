@@ -29,7 +29,7 @@ public:
     QPushButton *button8;
     QPushButton *button9;
     QPushButton *buttonMp;
-    QPushButton *MR;
+    QPushButton *buttonMR;
     QPushButton *buttonDiv;
     QPushButton *button6;
     QPushButton *button5;
@@ -54,7 +54,7 @@ public:
     {
         if (CalculatorClass->objectName().isEmpty())
             CalculatorClass->setObjectName(QString::fromUtf8("CalculatorClass"));
-        CalculatorClass->resize(303, 338);
+        CalculatorClass->resize(300, 333);
         centralWidget = new QWidget(CalculatorClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         button7 = new QPushButton(centralWidget);
@@ -138,10 +138,10 @@ public:
 "}\n"
 "\n"
 ""));
-        MR = new QPushButton(centralWidget);
-        MR->setObjectName(QString::fromUtf8("MR"));
-        MR->setGeometry(QRect(240, 80, 60, 50));
-        MR->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        buttonMR = new QPushButton(centralWidget);
+        buttonMR->setObjectName(QString::fromUtf8("buttonMR"));
+        buttonMR->setGeometry(QRect(240, 80, 60, 50));
+        buttonMR->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border: 1px solid grey;\n"
 "	background-color: Gainsboro;\n"
 "}\n"
@@ -477,7 +477,7 @@ public:
         CalculatorClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(CalculatorClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 303, 21));
+        menuBar->setGeometry(QRect(0, 0, 300, 21));
         CalculatorClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(CalculatorClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -498,7 +498,7 @@ public:
         button8->setText(QApplication::translate("CalculatorClass", "8", nullptr));
         button9->setText(QApplication::translate("CalculatorClass", "9", nullptr));
         buttonMp->setText(QApplication::translate("CalculatorClass", "M+", nullptr));
-        MR->setText(QApplication::translate("CalculatorClass", "MR", nullptr));
+        buttonMR->setText(QApplication::translate("CalculatorClass", "MR", nullptr));
         buttonDiv->setText(QApplication::translate("CalculatorClass", "/", nullptr));
         button6->setText(QApplication::translate("CalculatorClass", "6", nullptr));
         button5->setText(QApplication::translate("CalculatorClass", "5", nullptr));

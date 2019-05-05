@@ -13,8 +13,9 @@ public:
 private:
 	Ui::CalculatorClass ui;
 	double valueStored=0;
-	double conditionCheck = 0.000000000000021;
-	double secondNumberStored = 0.000000000000021;
+	double memoryValue = 0;
+	bool conditionCheck = false;
+	double secondNumberStored = 0;
 	QString currentMath="";
 	bool problemSolved = false;
 	bool mathButtonPressed = false;
@@ -30,4 +31,7 @@ private slots:
 	void equalButton();
 	void Clear();
 	void plusMinus();
+	void memoryPlus();
+	void memoryClear();
+	void memoryRead();
 };

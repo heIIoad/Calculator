@@ -17,14 +17,17 @@ Calculator::Calculator(QWidget *parent)
 		buttonName = "button" + buttonLabel;
 		numButtons[i] = Calculator::findChild<QPushButton*>(buttonName);
 		connect(numButtons[i], SIGNAL(released()),SLOT(numberButton()));
-		connect(ui.buttonDiv, SIGNAL(released()),SLOT(mathButton()), Qt::UniqueConnection);
-		connect(ui.buttonSum, SIGNAL(released()),SLOT(mathButton()), Qt::UniqueConnection);
-		connect(ui.buttonSub, SIGNAL(released()),SLOT(mathButton()), Qt::UniqueConnection);
-		connect(ui.buttonMulti, SIGNAL(released()),SLOT(mathButton()), Qt::UniqueConnection);
-		connect(ui.buttonEqual, SIGNAL(released()),SLOT(equalButton()), Qt::UniqueConnection);
-		connect(ui.buttonClear, SIGNAL(released()),SLOT(Clear()), Qt::UniqueConnection);
-		connect(ui.buttonSign, SIGNAL(released()),SLOT(plusMinus()), Qt::UniqueConnection);
 	}
+	connect(ui.buttonDiv, SIGNAL(released()), SLOT(mathButton()), Qt::UniqueConnection);
+	connect(ui.buttonSum, SIGNAL(released()), SLOT(mathButton()), Qt::UniqueConnection);
+	connect(ui.buttonSub, SIGNAL(released()), SLOT(mathButton()), Qt::UniqueConnection);
+	connect(ui.buttonMulti, SIGNAL(released()), SLOT(mathButton()), Qt::UniqueConnection);
+	connect(ui.buttonEqual, SIGNAL(released()), SLOT(equalButton()), Qt::UniqueConnection);
+	connect(ui.buttonClear, SIGNAL(released()), SLOT(Clear()), Qt::UniqueConnection);
+	connect(ui.buttonSign, SIGNAL(released()), SLOT(plusMinus()), Qt::UniqueConnection);
+	connect(ui.buttonMp, SIGNAL(released()), SLOT(memoryPlus()), Qt::UniqueConnection);
+	connect(ui.buttonMC, SIGNAL(released()), SLOT(memoryClear()), Qt::UniqueConnection);
+	connect(ui.buttonMR, SIGNAL(released()), SLOT(memoryRead()), Qt::UniqueConnection);
 }
 
 void Calculator::numberButton()
@@ -34,7 +37,8 @@ void Calculator::numberButton()
 	{
 		this->problemSolved = false;
 		ui.Display->setText("0");
-		this->secondNumberStored = this->conditionCheck;
+		this->secondNumberStored = 0;
+		this->conditionCheck = false;
 	}
 	if (this->mathButtonPressed == true)
 	{
@@ -75,40 +79,75 @@ void Calculator::mathButton()
 void Calculator::equalButton()
 {
 	QString displayValue = ui.Display->text();
-	if (this->double_equals(displayValue.toDouble(),this->valueStored) && this->problemSolved == true)
+	if (displayValue != "cannot divide by 0");
 	{
-		if (this->secondNumberStored != this->conditionCheck)
-			displayValue = QString::number(this->secondNumberStored);
-		else
-			displayValue = QString::number(this->valueStored);
+		if (this->double_equals(displayValue.toDouble(),this->valueStored) && this->problemSolved == true)
+		{
+			if (this->conditionCheck)
+				displayValue = QString::number(this->secondNumberStored);
+			else
+				displayValue = QString::number(this->valueStored);
+		}
+		double secondNumber = displayValue.toDouble();
+		this->secondNumberStored = secondNumber;
+		this->conditionCheck = true;
+		if (this->currentMath == "+")
+			this->valueStored += secondNumber;
+		else if (this->currentMath == "-")
+			this->valueStored -= secondNumber;
+		else if (this->currentMath == "/")
+		{
+			if (secondNumber)
+				this->valueStored /= secondNumber;
+		}
+		else if (this->currentMath == "*")
+			this->valueStored *= secondNumber;
+		if (secondNumber == 0)
+			ui.Display->setText("cannot divide by 0");
+		else 
+			ui.Display->setText(QString::number(valueStored, 'g', 12));
+		this->problemSolved = true;
 	}
-	double secondNumber = displayValue.toDouble();
-	this->secondNumberStored = secondNumber;
-	if (this->currentMath == "+")
-		this->valueStored += secondNumber;
-	else if (this->currentMath == "-")
-		this->valueStored -= secondNumber;
-	else if (this->currentMath == "/")
-		this->valueStored /= secondNumber;
-	else if (this->currentMath == "*")
-		this->valueStored *= secondNumber;
-	ui.Display->setText(QString::number(valueStored, 'g', 12));
-	this->problemSolved = true;
 }
 
 void Calculator::Clear()
 {
 	this->valueStored = 0;
-	this->secondNumberStored = this->conditionCheck;
+	this->secondNumberStored = 0;
+	this->conditionCheck = false;
 	this->currentMath = "";
 	ui.Display->setText("0");
 	this->problemSolved = false;
+	this->memoryValue = 0;
 }
 
 void Calculator::plusMinus()
 {
+	if(this->mathButtonPressed==true)
+		ui.Display->setText("0");
+	else
+	{
 	QString displayValue = ui.Display->text();
 	double value = displayValue.toDouble();
 	value *= -1;
 	ui.Display->setText(QString::number(value));
+	}
+}
+
+void Calculator::memoryPlus()
+{
+	QString numberToSave = ui.Display->text();
+	this->memoryValue += numberToSave.toDouble();
+	this->problemSolved = true;
+}
+
+void Calculator::memoryClear()
+{
+	this->memoryValue = 0;
+}
+
+void Calculator::memoryRead()
+{
+	if(memoryValue)
+		ui.Display->setText(QString::number(this->memoryValue));
 }
